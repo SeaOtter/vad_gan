@@ -5,9 +5,9 @@ This project proposed a anomaly detection framework using multilevel information
 
 ## New label set for UCSD Ped 1
 
-###Folder structure: 
+### Folder structure: 
 + relabeled_frames_anno
-	|------Test001_anno
+	|------Test001_anno	
 	|		|---053.bmp
 	|		|---053_anno.bmp
 	|		|---054.bmp
