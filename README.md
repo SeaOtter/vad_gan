@@ -1,6 +1,6 @@
 # [vad_gan] Robust Anomaly Detection in Videos using Multilevel Representations
 
-This project proposed a anomaly detection framework using multilevel information to identify anomaly objects in surveillance videos. Our research results in re-annotating the [original UCSD Ped 1 dataset](http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm) which is one of the most widely-used datasets in Video Anomaly Detection. You can find the new label set in relabeled_ped1.zip.
+This project proposed a anomaly detection framework using multilevel information to identify anomaly objects in surveillance videos. Our research results in re-annotating the [original UCSD Ped 1 dataset](http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm) which is one of the most widely-used datasets in Video Anomaly Detection. You can find the new label set in **relabeled_ped1.zip**.
 
 ## New label set for UCSD Ped 1
 
@@ -41,7 +41,7 @@ This project proposed a anomaly detection framework using multilevel information
 
 **relabeled_frames_anno**: only consists of frames with label modifications. Each subfolder is a video and only videos with label modifications are shown in this folder.
 Each frame has two *.bmp files: 
-+ *_anno.bmp is the ground-truth of additional anomaly objects	
-+ *.bmp is the new ground-truth that is the OR image of old UCSD Ped 1 ground-truth and additional ground-truth (*_anno.bmp)
++ \*_anno.bmp is the ground-truth of additional anomaly objects.
++ \*.bmp is the new ground-truth that is the OR image of the old UCSD Ped 1 ground-truth and the additional ground-truth (*_anno.bmp).
 
-**relabeled_frames_all**: is the relabeled ground-truth for all frame in UCSD Ped 1 that are the new ground-
+**relabeled_frames_all**: is the relabeled ground-truth for all frame in UCSD Ped 1 that are the new ground-truths if frames are not re-annotated (not in **relabeled_frames_anno**).
