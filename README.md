@@ -49,4 +49,4 @@ __**relabeled_frames_all**__: is the relabeled ground-truth of all frames in UCS
 If you are interested in the use of the new label set only, **relabeled_frames_all** is sufficient.
 When you use our source code or new label set, please cite our paper as well
 
-Hung Vu, Tu Dinh Nguyen, Trung Le, Wei Luo, Dinh Phung, "Robust Anomaly Detection in Videos using Multilevel Representations", in Proceedings of Thirty-third AAAI Conference on Artificial Intelligence (AAAI), Honolulu, USA, 27 January-01 February, 2019.
+*Hung Vu, Tu Dinh Nguyen, Trung Le, Wei Luo, Dinh Phung, **"Robust Anomaly Detection in Videos using Multilevel Representations"**, in Proceedings of Thirty-third AAAI Conference on Artificial Intelligence (AAAI), Honolulu, USA, 27 January-01 February, 2019.*
