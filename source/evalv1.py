@@ -26,9 +26,6 @@ def evalv1(data_str, imsz, vis_folder, beta, filename=None, test_str = 'test', a
         res_file = '%s/result_%s_beta%0.5f_v1.pkl'  % (vis_folder, dataholder.version, beta)
     else:
         res_file = '%s/%s.pkl' % (vis_folder, filename)
-    # if os.path.isfile(res_file):
-    #     res = pkl.load(open(res_file, 'r'))
-    # else:
 
     if anom_map_list is None:
         test_list = read_list_from_file('%s/%s.lst' % (data_folder, test_str))
@@ -107,69 +104,8 @@ def evalv1(data_str, imsz, vis_folder, beta, filename=None, test_str = 'test', a
 if __name__ == "__main__":
     data_str = 'UCSDped2'
     imsz = [240, 360]
-    # data_str = 'UCSDped1'
-    # data_str = 'Avenue'
-
     vis_folder_names =   [
-        # 'kmeans_1clsSVM_sz240x360_cell12x18_step6x9_shuf1_raw_train_evaltest_long10_noenh_scale3D_cls8_nu0.00001_gam0.00100',
-        # 'kmeans_1clsSVM_sz240x360_cell12x18_step6x9_shuf1_raw_train_evaltest_long10_noenh_scale3D_cls8_nu0.00001_gam0.01000',
-        # 'kmeans_1clsSVM_sz240x360_cell12x18_step6x9_shuf1_raw_train_evaltest_long10_noenh_scale3D_cls8_nu0.00001_gam0.10000',
-        # 'kmeans_1clsSVM_sz240x360_cell12x18_step6x9_shuf1_raw_train_evaltest_long10_noenh_scale3D_cls8_nu0.00010_gam0.00100',
-        # 'kmeans_1clsSVM_sz240x360_cell12x18_step6x9_shuf1_raw_train_evaltest_long10_noenh_scale3D_cls8_nu0.00010_gam0.01000',
-        # 'kmeans_1clsSVM_sz240x360_cell12x18_step6x9_shuf1_raw_train_evaltest_long10_noenh_scale3D_cls8_nu0.00010_gam0.10000',
-        # 'kmeans_1clsSVM_sz240x360_cell12x18_step6x9_shuf1_raw_train_evaltest_long10_noenh_scale3D_cls8_nu0.00100_gam0.00100',
-        # 'kmeans_1clsSVM_sz240x360_cell12x18_step6x9_shuf1_raw_train_evaltest_long10_noenh_scale3D_cls8_nu0.00100_gam0.01000',
-        # 'kmeans_1clsSVM_sz240x360_cell12x18_step6x9_shuf1_raw_train_evaltest_long10_noenh_scale3D_cls8_nu0.00100_gam0.10000'
-        # #
-        # 'kmeans_GMM_sz240x360_cell12x18_step6x9_shuf1_raw_train_evaltest_long10_noenh_scale3D_cls8_maxtrain100000_ncom20_thresh-50.00000',
-        # 'sz240x360_cell12x18_step6x9_shuf1_raw_hids100_train_evaltest_long10_noenh_scale_3D_cls4_maxtr100000_thresh0.00350_euc'
-        # 'opticalflow-pca_cellsz120x180_step120x180_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.800',
-        # 'opticalflow-pca_cellsz120x180_step120x180_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.900',
-        # 'opticalflow-pca_cellsz120x180_step120x180_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.950',
-        # 'opticalflow-pca_cellsz120x180_step120x180_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.800',
-        # 'opticalflow-pca_cellsz120x180_step120x180_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.900',
-        # 'opticalflow-pca_cellsz120x180_step120x180_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.950',
-        # 'opticalflow-pca_cellsz120x180_step120x180_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.800',
-        # 'opticalflow-pca_cellsz120x180_step120x180_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.900',
-        # 'opticalflow-pca_cellsz120x180_step120x180_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.950',
-        # 'opticalflow-pca_cellsz12x18_step12x18_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.800',
-        # 'opticalflow-pca_cellsz12x18_step12x18_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.900',
-        # 'opticalflow-pca_cellsz12x18_step12x18_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.950',
-        # 'opticalflow-pca_cellsz12x18_step12x18_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.800',
-        # 'opticalflow-pca_cellsz12x18_step12x18_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.900',
-        # 'opticalflow-pca_cellsz12x18_step12x18_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.950',
-        # 'opticalflow-pca_cellsz12x18_step12x18_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.800',
-        # 'opticalflow-pca_cellsz12x18_step12x18_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.900',
-        # 'opticalflow-pca_cellsz12x18_step12x18_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.950',
-        # 'opticalflow-pca_cellsz24x36_step24x36_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.800',
-        # 'opticalflow-pca_cellsz24x36_step24x36_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.900',
-        # 'opticalflow-pca_cellsz24x36_step24x36_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.950',
-        # 'opticalflow-pca_cellsz24x36_step24x36_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.800',
-        # 'opticalflow-pca_cellsz24x36_step24x36_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.900',
-        # 'opticalflow-pca_cellsz24x36_step24x36_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.950',
-        # 'opticalflow-pca_cellsz24x36_step24x36_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.800',
-        # 'opticalflow-pca_cellsz24x36_step24x36_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.900',
-        # 'opticalflow-pca_cellsz24x36_step24x36_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.950',
-        # 'opticalflow-pca_cellsz48x72_step48x72_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.800',
-        # 'opticalflow-pca_cellsz48x72_step48x72_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.900',
-        # 'opticalflow-pca_cellsz48x72_step48x72_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.950',
-        # 'opticalflow-pca_cellsz48x72_step48x72_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.800',
-        # 'opticalflow-pca_cellsz48x72_step48x72_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.900',
-        # 'opticalflow-pca_cellsz48x72_step48x72_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.950',
-        # 'opticalflow-pca_cellsz48x72_step48x72_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.800',
-        # 'opticalflow-pca_cellsz48x72_step48x72_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.900',
-        # 'opticalflow-pca_cellsz48x72_step48x72_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.950',
-        # 'opticalflow-pca_cellsz60x90_step60x90_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.800',
-        # 'opticalflow-pca_cellsz60x90_step60x90_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.900',
-        # 'opticalflow-pca_cellsz60x90_step60x90_traintrain_testtest_framenb5_motionthres0.250_pcathresh0.950',
-        # 'opticalflow-pca_cellsz60x90_step60x90_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.800',
-        # 'opticalflow-pca_cellsz60x90_step60x90_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.900',
-        # 'opticalflow-pca_cellsz60x90_step60x90_traintrain_testtest_framenb5_motionthres0.500_pcathresh0.950',
-        # 'opticalflow-pca_cellsz60x90_step60x90_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.800',
-        # 'opticalflow-pca_cellsz60x90_step60x90_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.900',
-        # 'opticalflow-pca_cellsz60x90_step60x90_traintrain_testtest_framenb5_motionthres0.750_pcathresh0.950'
-        # 'dbm_sz240x360_cell12x18_step6x9_shuf1_raw_hids100_train_evaltest_long15_noenh_scale3D_cls4_maxtr100000_onl_fw20_ep20_cd1_thresh0.00600_uptmiddle_euc'
-        # 'vad-pixel2pixel-msz50-t1.100'
+
         'hvad-msz50-t1.200'
         ]
 

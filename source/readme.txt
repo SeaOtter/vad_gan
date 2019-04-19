@@ -1,0 +1,1 @@
+Please run script_linux.sh on Linux

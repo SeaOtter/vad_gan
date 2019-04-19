@@ -4,6 +4,11 @@ export CUDA_VISIBLE_DEVICES=0
 batchsize=50
 dataset=UCSDped2_demo
 
+
+####################################################################
+echo [0] GATHERING GROUND-TRUTH TO A NUMPY FILE
+python3 collect_gt_npy.py $dataset
+
 ####################################################################
 echo [1] EXTRACTING FEATURES
 
